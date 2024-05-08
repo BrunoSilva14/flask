@@ -25,6 +25,6 @@ def test_aborting(app):
             # For older Werkzeug that used absolute redirects.
             assert location_parts[0] == "http://localhost"
 
-        assert location_parts[2] == "test"
-        rv = c.get("/test")
+        assert location_parts[2] == "/test"
+        rv = c.get("test")
         assert rv.data == b"42"

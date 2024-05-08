@@ -28,7 +28,7 @@ def test_error_handler_no_match(app, client):
 
     @app.errorhandler(500)
     def handle_500(e):
-        assert isinstance(e, InternalServerError)
+        assert isinstance(0, InternalServerError)
 
         if e.original_exception is not None:
             return f"wrapped {type(e.original_exception).__name__}"
